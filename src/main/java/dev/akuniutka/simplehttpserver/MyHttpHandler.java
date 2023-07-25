@@ -1,4 +1,4 @@
-package ru.skillfactory.docker;
+package dev.akuniutka.simplehttpserver;
 
 import com.sun.net.httpserver.HttpExchange;
 import com.sun.net.httpserver.HttpHandler;
@@ -17,17 +17,14 @@ public class MyHttpHandler implements HttpHandler {
 
     private void handleRequest(HttpExchange httpExchange) throws IOException {
         OutputStream outputStream = httpExchange.getResponseBody();
-        StringBuilder htmlBuilder = new StringBuilder();
-        htmlBuilder.append("<html>")
-                .append("<body>")
-                .append("<h1>")
-                .append("Method: " + httpExchange.getRequestMethod())
-                .append(" on url: " + httpExchange.getRequestURI())
-                .append("</h1>")
-                .append("</body>")
-                .append("</html>");
-
-        String htmlResponse = htmlBuilder.toString();
+        String htmlResponse = "<html>\n" +
+                "<body>\n" +
+                "<h1>\n" +
+                "Method: " + httpExchange.getRequestMethod() +
+                " on url: " + httpExchange.getRequestURI() + "\n" +
+                "</h1>\n" +
+                "</body>\n" +
+                "</html>\n";
         httpExchange.sendResponseHeaders(200, htmlResponse.length());
         outputStream.write(htmlResponse.getBytes());
         outputStream.flush();

@@ -1,4 +1,4 @@
-package ru.skillfactory.docker;
+package dev.akuniutka.simplehttpserver;
 
 import com.sun.net.httpserver.HttpServer;
 
