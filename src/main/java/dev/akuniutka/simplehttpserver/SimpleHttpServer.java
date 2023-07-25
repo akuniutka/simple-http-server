@@ -11,7 +11,7 @@ public class SimpleHttpServer {
 
     private final static Logger LOGGER = Logger.getLogger(SimpleHttpServer.class.getName());
     public static final String HOSTNAME = "0.0.0.0";
-    public static final int PORT = 8001;
+    public static final int PORT = 80;
 
     public static void main(String[] args) throws IOException {
         HttpServer server = HttpServer.create(new InetSocketAddress(HOSTNAME, PORT), 0);
